@@ -1,0 +1,68 @@
+<div id="categories_body">
+  <a routerLink="../progress">
+    <div class="progress_bar">
+      <div>Progress</div>
+      <span class="bar"><span class="total_evol" [style.width.%]="progressBar.progress_bar_width"></span></span>
+      <div class="progress_nr">{{progressBar.done_nr}}/{{progressBar.total_nr}}</div>
+    </div>
+  </a>
+  <div id="categories">
+    <app-category *ngFor="let category of categories; let i=index" [category]="category"
+                  [bgColor]="i" (extended_task)="onExtendedTask($event)"
+                  (extend_add_task)="add_task($event)" (category_removed)="removeCategory($event)" >
+    </app-category>
+  </div>
+
+  <button class="add_category_btn" (click)="extend_add_category()">Add a new category </button>
+
+  <div class="overlay_wrapper" [style.display]="overlays.display_add_category">
+    <div class="overlay_bg" (click)="close_overlay()"></div>
+    <div class="overlay_container">
+      <div class="input-group">
+        <label>Category Name</label>
+        <input type="text" [(ngModel)]="newCategoryTitle" required/>
+        {{newCategoryTitle}}
+      </div>
+
+      <div class="overlay_buttons">
+        <button class="submit_btn" (click)="add_category()"><img src="/assets/images/check_light.svg" width="35" height="35"/></button>
+        <button class="cancel_btn" (click)="close_overlay()"><img class="close_btn" src="/assets/images/close_light.svg"/></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay_wrapper" [style.display]="overlays.display_task">
+    <div class="overlay_bg" (click)="close_overlay()"></div>
+    <div class="overlay_container">
+      <div class="task_extended_title">{{extendedTask.name}}</div>
+      <div class="task_extended_content">{{extendedTask.description}}</div>
+      <div class="overlay_buttons">
+        <button class="complete_task_btn task_btn" (click)="set_task_done(true)" *ngIf="!extendedTask.done">Done</button>
+        <button class="undo_task_btn task_btn" (click)="set_task_done(false)" *ngIf="extendedTask.done">Undo</button>
+        <button class="remove_task_btn task_btn" (click)="remove_task()">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay_wrapper" [style.display]="overlays.display_add_task">
+    <div class="overlay_bg" (click)="close_overlay()"></div>
+    <div class="overlay_container">
+      <form>
+        <div class="input-group">
+          <label>Task Name</label>
+          <input type="text" name="task_name" [(ngModel)]="newTaskName" #taskName=ngModel required/>
+          <div class="input_error" *ngIf="taskName.invalid && taskName.touched">Task Name required</div>
+        </div>
+        <div class="input-group">
+          <label>Task description</label>
+          <textarea type="textarea" name="task_desc" [(ngModel)]="newTaskDescription"></textarea>
+        </div>
+
+        <div class="overlay_buttons">
+          <button type="submit" [class.is-disabled]="!taskName.valid" [disabled]="!taskName.valid" class="submit_btn" (click)="submit_task()"><img src="/assets/images/check_light.svg" width="35" height="35"/></button>
+          <button class="cancel_btn" (click)="close_overlay()"><img class="close_btn" src="/assets/images/close_light.svg"/></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

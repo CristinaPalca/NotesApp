@@ -1,0 +1,18 @@
+.task_container{
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.task_light{
+  background-color: #828282;
+}
+
+.task_name{
+  font-weight: 700;
+  text-align: center;
+  font-size: 20px;
+  padding: 7px 0;
+}
+

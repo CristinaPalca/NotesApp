@@ -117,8 +117,16 @@
               "devServerTarget": "NotesApp:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "NotesApp"
+    }
+  },
+  "defaultProject": "NotesApp",
+  "cli": {
+    "analytics": false
+  }
 }

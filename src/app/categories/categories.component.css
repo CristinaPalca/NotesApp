@@ -1,0 +1,127 @@
+#categories_body{
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+.progress_bar {
+  font-size: 20px;
+  padding: 0 4vw 15px 4vw;
+  font-weight: 500;
+}
+.bar{
+  width: 92vw;
+  height: 3px;
+  background-color: #262626;
+  display: block;
+  margin: 15px auto 10px auto;
+  border-radius: 3px;
+}
+.total_evol{
+  height: 4px;
+  float: left;
+  border-radius: 4px;
+  background-color: #BA32F6;
+}
+
+.progress_nr{
+  font-size: 16px;
+}
+
+.add_category_btn{
+  width: 100vw;
+  padding: 15px 0;
+  background-color: #026FFF;
+  border: none;
+  border-radius: 20px 20px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.overlay_wrapper{
+  position: relative;
+}
+.overlay_bg{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.overlay_container{
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  background-color: #636367;
+  padding: 40px 5vw;
+  border-radius: 50px 50px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.input-group>*{
+  margin: 10px 0;
+  font-size: 18px;
+  width: 80vw;
+}
+
+.input-group>input,
+.input-group>textarea{
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #3A3A3C;
+}
+.overlay_buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay_buttons>button{
+  margin: 0 15px;
+  background: none;
+  border: none;
+}
+.task_extended_title{
+  font-size: 22px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.task_extended_content{
+  font-weight: 500;
+  padding-bottom: 25px;
+}
+.task_btn{
+  font-size: 18px;
+  border: none;
+  color: #7EB0F2;
+  font-weight: 500;
+}
+.input_error{
+  font-size: 15px!important;
+  font-weight: 600;
+  transform: translateY(-5px);
+}
+.is-disabled{
+  opacity: 0.2;
+}
+
+@media (min-width: 768px){
+  #categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+

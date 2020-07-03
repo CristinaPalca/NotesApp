@@ -1,0 +1,15 @@
+<div class="category_container" [class.shrinked] = "extendedCategory">
+  <div class="category_name" [style.background-image]="colorTemplate" (click)="toggleShrink()">{{category.name}}</div>
+  <div class="category_content">
+    <app-task *ngFor="let task of category.tasks" [task]="task" (extended)="onExtendedTask($event)"></app-task>
+    <button class="add_task_btn" (click)="add_task()">Add new task</button>
+    <button class="remove_category_btn" (click)="removeCategory()">Remove category</button>
+  </div>
+</div>
+
+
+
+
+
+
+

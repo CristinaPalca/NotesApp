@@ -1,0 +1,16 @@
+<div class="progress_container">
+  <h1>Progress</h1>
+
+  <div class="progress_bar">
+    <span class="progress_title">Total</span><span class="progress_nr">{{progressTotal.done}}/{{progressTotal.total}}</span>
+    <span class="bar"><span class="total_evol" [style.width.%]="progressTotal.width"></span></span>
+  </div>
+  <div class="progress_bar" *ngFor="let obj of progressCategories; let i=index">
+    <span class="progress_title">{{obj.name}}</span><span class="progress_nr">{{obj.done}}/{{obj.total}}</span>
+    <span class="bar"><span class="total_evol" [style.background-color]="colors[i]" [style.width.%]="obj.width"></span></span>
+
+  </div>
+
+  <a class="progress_return" routerLink="../categories">Return to tasks</a>
+
+</div>
