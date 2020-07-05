@@ -177,9 +177,9 @@ export class CategoriesComponent implements OnInit{
   }
 
   removeCategory($event){
-
     this.categories = this.categories.filter((cat) => cat.id != $event.id);
     this.getData.removeCategory($event.id);
+    this.update_bar();
   }
 
 }
