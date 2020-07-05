@@ -24,9 +24,6 @@ export class GetDataService {
     }else{
       this.myCategories = JSON.parse(localStorage.getItem('categories'));
     }
-    //this.addSome();
-    //     //this.pushToLocalStorage();
-    console.log(this.myCategories);
   }
 
   addSome(){
@@ -89,7 +86,6 @@ export class GetDataService {
   }
 
   removeCategory(id: number){
-    console.log(id);
     if (this.myCategories){
       this.myCategories = this.myCategories.filter(cat => cat.id != id);
     }

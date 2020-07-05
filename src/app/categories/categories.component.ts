@@ -1,11 +1,27 @@
 import {Component, OnInit} from '@angular/core';
 import {ICategory, ITask} from '../model';
 import {GetDataService} from '../get-data.service';
+import {animate, query, stagger, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  styleUrls: ['./categories.component.css'],
+  animations: [
+    trigger('displayCategories', [
+      transition('* => *', [
+        query(':enter', style(
+          {opacity: 0, transform: 'translateX(-30px)'
+          }), {optional: true}),
+        query(':enter', stagger(
+          '0.3s', animate('0.5s ease-in', style({
+            opacity: 1,
+            transform: 'translateX(0)'
+          }))
+        ), {optional: true})
+      ])
+    ])
+  ]
 })
 export class CategoriesComponent implements OnInit{
 
@@ -48,7 +64,6 @@ export class CategoriesComponent implements OnInit{
       }
     });
     this.initial_update_bar();
-    console.log(this.categories);
   }
 
   initial_update_bar(){
@@ -114,7 +129,6 @@ export class CategoriesComponent implements OnInit{
   }
 
   set_task_done(value: boolean){
-    console.log('set task done ', value);
     for (const cat of this.categories) {
       for (const task of cat.tasks) {
         if (task.id === this.extendedTask.id && task.name === this.extendedTask.name) {
@@ -142,7 +156,6 @@ export class CategoriesComponent implements OnInit{
   add_task($event){
     this.overlays.display_add_task = 'block';
     this.tmp_category_to_add_task = $event;
-    console.log('add task entered ', $event);
   }
   submit_task(){
     let taskId = 0;
@@ -166,7 +179,6 @@ export class CategoriesComponent implements OnInit{
   removeCategory($event){
 
     this.categories = this.categories.filter((cat) => cat.id != $event.id);
-    console.log(this.categories);
     this.getData.removeCategory($event.id);
   }
 

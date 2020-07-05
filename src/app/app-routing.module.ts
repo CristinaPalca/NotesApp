@@ -5,9 +5,8 @@ import {ProgressPageComponent} from './progress-page/progress-page.component';
 
 
 const routes: Routes = [
-  {path: 'categories', component: CategoriesComponent},
-  {path: '', redirectTo: 'categories', pathMatch: 'full'},
-  {path: 'progress', component: ProgressPageComponent}
+  {path: 'progress', component: ProgressPageComponent},
+  {path: '', component: CategoriesComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './category/category.component';
 import { TaskComponent } from './task/task.component';
 import { ProgressPageComponent } from './progress-page/progress-page.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ProgressPageComponent } from './progress-page/progress-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

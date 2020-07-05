@@ -1,19 +1,6 @@
-.category_wrapper{
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-}
-.category_swipe{
-  display: flex;
-  flex: 0 0 auto;
-}
-.trash_btn{
-  margin-left: 8vw;
-}
-
 .category_container{
   width: 92vw;
-  max-width: 360px;
+  max-width: 380px;
   background-color: #515050;
   display: flex;
   margin: 20px auto;
@@ -28,9 +15,9 @@
   font-size: 22px;
 }
 .category_content{
-  padding: 20px 15px 25px 15px;
+  position: relative;
 }
-
+/*
 .add_task_btn, .remove_category_btn{
   width: 100%;
   padding: 10px;
@@ -45,16 +32,42 @@
 .remove_category_btn{
   background-color: rgba(186, 50, 246, 0.4);
 
-}
+}*/
 .shrinked>.category_content{
   display: none;
 }
 
-@media (min-width: 768px){
+.category_btns{
+  left: 0;
+  bottom: 0;
+  background-color: red;
+  margin: 0;
+  display: flex;
+  align-items: stretch;
+}
+.category_btns>button{
+  width: 50%;
+  padding: 15px 15px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+.add_task_btn{
+  background-color: #3BB2BF;
+}
+.remove_category_btn{
+  background-color: #BF2F3B;
+}
 
+@media (min-width: 768px){
   .category_container{
     margin: 20px 20px;
   }
 
+  .category_btns>button{
+    padding: 20px 20px;
+  }
 }
 

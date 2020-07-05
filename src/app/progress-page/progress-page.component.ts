@@ -24,7 +24,6 @@ export class ProgressPageComponent implements OnInit {
   ngOnInit(): void {
     this.colors = colors;
     let tmpCategories = [];
-    //const tmpCategories = this.data.getCategories();
     this.data.getCategoriesObservable().subscribe(data => {
       if (tmpCategories){
         tmpCategories.push(data);

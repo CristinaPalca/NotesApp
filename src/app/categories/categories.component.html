@@ -6,7 +6,8 @@
       <div class="progress_nr">{{progressBar.done_nr}}/{{progressBar.total_nr}}</div>
     </div>
   </a>
-  <div id="categories">
+  <!-- Categories items-->
+  <div id="categories" [@displayCategories]="categories.length">
     <app-category *ngFor="let category of categories; let i=index" [category]="category"
                   [bgColor]="i" (extended_task)="onExtendedTask($event)"
                   (extend_add_task)="add_task($event)" (category_removed)="removeCategory($event)" >
@@ -25,8 +26,8 @@
       </div>
 
       <div class="overlay_buttons">
-        <button class="submit_btn" (click)="add_category()"><img src="/assets/images/check_light.svg" width="35" height="35"/></button>
-        <button class="cancel_btn" (click)="close_overlay()"><img class="close_btn" src="/assets/images/close_light.svg"/></button>
+        <button class="submit_btn" (click)="add_category()"><img src="./assets/images/check_light.svg" width="35" height="35"/></button>
+        <button class="cancel_btn" (click)="close_overlay()"><img class="close_btn" src="./assets/images/close_light.svg"/></button>
       </div>
     </div>
   </div>
@@ -59,8 +60,8 @@
         </div>
 
         <div class="overlay_buttons">
-          <button type="submit" [class.is-disabled]="!taskName.valid" [disabled]="!taskName.valid" class="submit_btn" (click)="submit_task()"><img src="/assets/images/check_light.svg" width="35" height="35"/></button>
-          <button class="cancel_btn" (click)="close_overlay()"><img class="close_btn" src="/assets/images/close_light.svg"/></button>
+          <button type="submit" [class.is-disabled]="!taskName.valid" [disabled]="!taskName.valid" class="submit_btn" (click)="submit_task()"><img src="./assets/images/check_light.svg" width="35" height="35"/></button>
+          <button class="cancel_btn" (click)="close_overlay()"><img class="close_btn" src="./assets/images/close_light.svg"/></button>
         </div>
       </form>
     </div>

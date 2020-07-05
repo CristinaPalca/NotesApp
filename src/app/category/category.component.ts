@@ -27,16 +27,13 @@ export class CategoryComponent implements OnInit {
     this.colorTemplate = `linear-gradient(135deg, #BA32F6, ${this.color} )`;
   }
 
-
   onExtendedTask($event: ITask){
     this.extended_task.emit($event);
-    // console.log("from category ", $event);
   }
 
   toggleShrink(){
     this.extendedCategory = !this.extendedCategory;
   }
-
 
   add_task(){
     this.extend_add_task.emit(this.category);

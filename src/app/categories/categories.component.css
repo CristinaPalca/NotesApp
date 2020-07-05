@@ -21,6 +21,7 @@
   float: left;
   border-radius: 4px;
   background-color: #BA32F6;
+  transition: width 1s ease-in;
 }
 
 .progress_nr{
@@ -116,12 +117,16 @@
 .is-disabled{
   opacity: 0.2;
 }
+#categories{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 @media (min-width: 768px){
   #categories{
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
   }
 }
 
